@@ -32,6 +32,11 @@ namespace MyDistanceMove
                 Console.WriteLine(sharp);
                 Console.ForegroundColor = ConsoleColor.Red;  Console.WriteLine("[Error] Invalid argument specified, enter an integer");
             }
+            catch(OverflowException)
+            {
+                Console.WriteLine(sharp);
+                Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[Error] Non-correct number entered");
+            }
             finally
             {
                 Console.WriteLine(sharp);
