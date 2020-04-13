@@ -8,39 +8,44 @@ namespace MyDistanceMove
         {
             MoveAndSpreed moveAndSpreed = new MoveAndSpreed();
 
-            string sharp = "######################################################################################"; // ### lines.
+            const string Sharp = "######################################################################################"; // ### lines.
+
+            Console.ForegroundColor = ConsoleColor.Cyan; Console.WriteLine($"FAQ... hours, {Environment.NewLine} ## 1 - 10 minutes, 2 - 20 minutes, 3 - 30 minutes. {Environment.NewLine} ## 4 - 40 minutes, 5 - 50 minutes, 6 - 60 minutes. {Environment.NewLine} ## 7 - 70 minutes, 8 - 80 minutes, 9 - 90 minutes.");
+            // FAQ hours, minutes.
+
+            Console.WriteLine(Sharp);
 
             try
             {
-                Console.ForegroundColor = ConsoleColor.Blue; Console.WriteLine($"##### MyDistanceMove #####");
+                Console.ForegroundColor = ConsoleColor.Cyan; Console.WriteLine($"##### MyDistanceMove #####");
                 Console.WriteLine("Indicate the distance you need, then indicate how fast you will travel [kilometers] : ");
-                Console.WriteLine(sharp);
+                Console.WriteLine(Sharp);
                 Console.WriteLine($"You have traveled the distance for {Math.Round(moveAndSpreed.Move(0M, 0M), 2)} hours / minutes");
             }
             catch(ArgumentNullException)
             {
-                Console.WriteLine(sharp);
+                Console.WriteLine(Sharp);
                 Console.ForegroundColor = ConsoleColor.Red;  Console.WriteLine("[Error] Empty values");
             }
             catch(DivideByZeroException)
             {
-                Console.WriteLine(sharp);
-                Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[Error] Zero division attempt");
+                Console.WriteLine(Sharp);
+                Console.ForegroundColor = ConsoleColor.Red;  Console.WriteLine("[Error] Zero division attempt");
             }
             catch(FormatException)
             {
-                Console.WriteLine(sharp);
+                Console.WriteLine(Sharp);
                 Console.ForegroundColor = ConsoleColor.Red;  Console.WriteLine("[Error] Invalid argument specified, enter an integer");
             }
             catch(OverflowException)
             {
-                Console.WriteLine(sharp);
+                Console.WriteLine(Sharp);
                 Console.ForegroundColor = ConsoleColor.Red; Console.WriteLine("[Error] Non-correct number entered");
             }
             finally
             {
-                Console.WriteLine(sharp);
-                Console.ForegroundColor = ConsoleColor.Green;  Console.WriteLine("[Completed] MyDistanceMove Robot Offer Completed");
+                Console.WriteLine(Sharp);
+                Console.ForegroundColor = ConsoleColor.Green; Console.WriteLine("[Completed] MyDistanceMove Robot Offer Completed");
             }
 
             Console.ReadKey();
